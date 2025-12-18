@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding Dockerr 2.0!!</title>
+    <style>
+        body {
+            background-color: rgba(25, 25, 112, 0.808);
+            color:antiquewhite;
+            text-align: center;
+            text-decoration-style: solid;
+            font-style: normal;
+            
+            text-shadow: 2px rgb(248, 246, 246);
+        }
+        h1{
+            color:aliceblue;
+            font-size: 64px;
+            text-align: center;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 14px;
+            padding-top: 14px;
+            padding-bottom: 25px;
+            margin: 10px;
+        }
+        h1:hover{
+            color:rgb(255, 255, 255);
+            
+            text-transform: uppercase;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            background-color: rgb(27, 27, 114);
+            border-radius: 13px;
+        }
+        h4{
+            background-color: rgb(26, 26, 110);
+            font-size: 30px;
+            text-transform: uppercase;
+            font-style: normal;
+            font-family: monospace;
+            padding: 4px;
+            padding-top: 10px;
+            padding-bottom:20px;
+            margin: auto;
+            border-radius: 13px;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+        }
+        h3{
+            background-color: rgb(26, 26, 110);
+            font-size:25px;
+            text-transform: uppercase;
+            font-family: monospace;
+            padding: 30px;
+            margin: auto;
+        }
+
+        button{
+            border-radius: 10px;
+            font-size: 22px;
+            padding: 10px;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            background-color: beige;
+            color:rgb(15, 4, 77);
+        }
+        button:hover{
+            background-color: rgb(219, 204, 243);
+        }
+        p{
+            font-size: 28px;
+        }
+        .footer{
+            background-color: #fffcce;
+            color:rgb(14, 14, 77);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            padding: 4px;
+            margin:10px;
+            border-radius: 13px;
+        }
+
+        
+
+    </style>
+</head>
+<body>
+
+    <h1>Hello Everyone!</h1>
+    <br><br>
+
+    <h4>This is my first try at running a custom Docker Network!</h4>
+    <h3>Thanks for Landing here! You're currently at port 8080!</h3>
+    <br><br>
+    <button id="apiwalbtn"> Hit! </button>
+    <p id="reslt"> Hit and Talk to the API! </p>
+    <div class="footer">
+        <h4  class="footer">L i c e n s e &nbsp  : &nbsp  C C</h4>
+    </div>
+    <script>
+        document.getElementById('apiwalbtn').addEventListener('click', () => {
+            fetch('/api/') 
+                .then(response=>response.text())
+                .then(data=>{
+                    document.getElementById('reslt').innerText = "API Says: " + data;
+                })
+                .catch(err=>{
+                    document.getElementById('reslt').innerText = "Error: " + err;
+                });
+        });
+    </script>
+
+
+</body>
+</html>
